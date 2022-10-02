@@ -1,6 +1,7 @@
 <MyLayout>
 	search_box:search_box
-	result:result
+	result1:result1
+	result2:result2
 
 	BoxLayout:
 		orientation:"vertical"
@@ -20,10 +21,29 @@
 			Button:
 				text:"Search"
 				on_press: root.search()
+				size_hint_x: 0.2
 
-		TextInput:
-			id:result
-			multiline:True
+		TabbedPanel:
+			do_default_tab:False
 
+			TabbedPanelItem:
+				text:"Tab1"
+				GridLayout:
+					cols:1
+					spacing:5
+					padding:5
+					
+					TextInput:
+						id:result1
+						multiline:True
 
+			TabbedPanelItem:
+				text:"Tab2"
+				GridLayout:
+					cols:1
+					spacing:5
+					padding:5
 
+					TextInput:
+						id:result2
+						multiline:True
