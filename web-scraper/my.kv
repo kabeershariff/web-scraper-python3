@@ -1,4 +1,7 @@
 <MyGridLayout>
+	search_box:search_box
+	result:result
+
 	GridLayout:
 		cols:1
 		size: root.width, root.height
@@ -7,10 +10,13 @@
 			cols:2
 
 			TextInput:
+				id:search_box
 				multiline:False
 			Button:
 				text:"Search"
+				on_press: root.search()
 
 		TextInput:
+			id:result
 			multiline:True
 
