@@ -1,13 +1,18 @@
-<MyGridLayout>
+<MyLayout>
 	search_box:search_box
 	result:result
 
-	GridLayout:
-		cols:1
+	BoxLayout:
+		orientation:"vertical"
 		size: root.width, root.height
+		spacing:10
+		padding:10
 
 		GridLayout:
 			cols:2
+			size_hint_y:None
+			height:50
+			spacing:10
 
 			TextInput:
 				id:search_box
@@ -19,4 +24,6 @@
 		TextInput:
 			id:result
 			multiline:True
+
+
 

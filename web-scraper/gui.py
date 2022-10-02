@@ -5,7 +5,7 @@ from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty
 
-class MyGridLayout(Widget):
+class MyLayout(Widget):
     
     search_box = ObjectProperty(None)
     result = ObjectProperty(None)
@@ -17,5 +17,5 @@ class MyGridLayout(Widget):
 class MyApp(App):
 
     def build(self):
-        return MyGridLayout()
+        return MyLayout()
 
