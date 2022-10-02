@@ -12,24 +12,33 @@ class Layout(GridLayout):
         #calling constructor
         super(Layout, self).__init__(**kwargs)
         
-        #column number
-        self.cols = 2
+        #main grid column number
+        self.cols = 1
+        
+        #top grid
+        self.top_grid = GridLayout()
+        self.top_grid.cols = 2
+        self.add_widget(self.top_grid)
 
         #widgets
 
         #search box
         self.search_box = TextInput(multiline = False)
-        self.add_widget(self.search_box)
+        self.top_grid.add_widget(self.search_box)
 
         #search button
         self.search_button = Button(text="Search")
-        self.add_widget(self.search_button)
+        self.top_grid.add_widget(self.search_button)
         
         self.search_button.bind(on_press=self.search)
 
+        #results here
+        self.result = TextInput(multiline =True)
+        self.add_widget(self.result)
+
     def search(self, instance):
-        query = self.search_box.text
-        print(query)
+        pass
+        #query = self.search_box.text
 
 
 class MyApp(App):
