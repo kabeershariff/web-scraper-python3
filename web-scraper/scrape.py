@@ -14,7 +14,7 @@ class Start(object):
         url = input("search term : ")
         response = requests.get(f'https://www.flipkart.com/search?q={url}')
         response_content = response.content
-        soup = BeautifulSoup(response.text, "html.parser")
+        soup = BeautifulSoup(response_content, "html.parser")
         print(soup.prettify())
 
 
