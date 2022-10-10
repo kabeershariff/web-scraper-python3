@@ -1,3 +1,4 @@
+from scrape import *
 import kivy
 kivy.require('2.1.0') #required kivy version
 
@@ -13,11 +14,14 @@ class MyLayout(Widget):
     result2 = ObjectProperty(None)
     
     def search(self):
-        pass
+        global url
+        url = self.search_box.text
+        Start().get_page(url)
 
 
 class MyApp(App):
 
     def build(self):
         return MyLayout()
+
 
