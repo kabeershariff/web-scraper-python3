@@ -1,6 +1,6 @@
+#:import TextInput kivy.uix.textinput.TextInput
 <MyLayout>
 	search_box:search_box
-	result1:result1
 	result2:result2
 
 	BoxLayout:
@@ -38,48 +38,8 @@
 						row_default_height:260
 						height:self.minimum_height
 					
-						TextInput:
-							id:result1
-							readonly: True
-						TextInput:
-							readonly: True
-						TextInput:
-							readonly: True
-						TextInput:
-							readonly: True
-						TextInput:
-							readonly: True
-						TextInput:
-							readonly: True
-						TextInput:
-							readonly: True
-						TextInput:
-							readonly: True
-						TextInput:
-							readonly: True
-						TextInput:
-							readonly: True
-						TextInput:
-							readonly: True
-						TextInput:
-							readonly: True
-						TextInput:
-							readonly: True
-						TextInput:
-							readonly: True
-						TextInput:
-							readonly: True
-						TextInput:
-							readonly: True
-						TextInput:
-							readonly: True
-						TextInput:
-							readonly: True
-						TextInput:
-							readonly: True
-						TextInput:
-							readonly: True
-
+						on_parent:
+							for i in range(20):self.add_widget(TextInput(readonly = True))
 
 			TabbedPanelItem:
 				text:"Tab2"
