@@ -12,7 +12,13 @@ class Start(object):
         response = requests.get(f'https://www.flipkart.com/search?q={url}')
         response_content = response.content
         soup = BeautifulSoup(response_content, "html.parser")
-        print(soup.prettify())
+        response_prices = soup.find_all('div', class_="_30jeq3")
+
+        for i in response_prices:
+            price = i.text
+            print(price)
+
+
 
 
 
